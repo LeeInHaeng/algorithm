@@ -1,0 +1,22 @@
+import java.util.ArrayList;
+
+class Solution {
+    private ArrayList<Integer> answers = new ArrayList<>();
+    public int solution(int[] numbers, int target) {
+        int answer = 0;
+        dfs(0, numbers, 0);
+        for(int ans : answers){
+            if(ans == target)
+                answer++;
+        }
+        return answer;
+    }
+    public void dfs(int num, int[] numbers, int idx){
+        if(idx==numbers.length){
+            answers.add(num);
+            return;
+        }
+        dfs(num+numbers[idx], numbers, idx+1);
+        dfs(num-numbers[idx], numbers, idx+1);
+    }
+}
