@@ -1,0 +1,17 @@
+class Solution {
+  public boolean solution(String s) {
+	  
+	  char[] chr = s.toCharArray();
+	  if(chr.length!=4 && chr.length!=6){
+          return false;
+      }
+	  else {
+		  for(char c : chr) {
+			  if(!Character.isDigit(c)) {
+				  return false;
+			  }
+		  }
+	  }
+      return true;
+  }
+}

@@ -1,0 +1,15 @@
+import java.util.*;
+
+class Solution {
+  public String solution(String s) {
+      String answer = "";
+      String[] cut = s.split("");
+      if(cut.length%2==1){
+          return cut[cut.length/2];
+      }
+      else{
+          answer += cut[cut.length/2-1]+cut[cut.length/2];
+          return answer;
+      }
+  }
+}

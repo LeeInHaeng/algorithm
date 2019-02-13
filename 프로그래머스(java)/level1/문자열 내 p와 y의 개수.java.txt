@@ -1,0 +1,20 @@
+class Solution {
+    boolean solution(String s) {
+
+        String[] tmp = s.split("");
+        int pcnt = 0;
+        int ycnt = 0;
+        for(String t : tmp){
+            if(t.toLowerCase().equals("p"))
+                pcnt+=1;
+            if(t.toLowerCase().equals("y"))
+                ycnt+=1;
+        }
+        System.out.println(pcnt);
+        System.out.println(ycnt);
+        if(pcnt==ycnt)
+            return true;
+        else
+            return false;
+    }
+}

@@ -1,0 +1,21 @@
+import java.util.*;
+
+public class Solution {
+	public int[] solution(int []arr) {
+        ArrayList<Integer> tmp = new ArrayList<>();
+        int compareNum = arr[0];
+        tmp.add(compareNum);
+        for(int i=1; i<arr.length; i++){
+            if(arr[i] != compareNum){
+                tmp.add(arr[i]);
+                compareNum = arr[i];
+            }
+        }
+        
+        int[] answer = new int[tmp.size()];
+        for(int i=0; i<tmp.size(); i++){
+            answer[i] = tmp.get(i);
+        }
+        return answer;
+	}
+}

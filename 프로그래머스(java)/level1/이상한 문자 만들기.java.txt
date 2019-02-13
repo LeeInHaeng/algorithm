@@ -1,0 +1,24 @@
+class Solution {
+  public String solution(String s) {
+      String answer = "";
+      String[] sArr = s.split("");
+      int startIdx = 0;
+      for(String sarr : sArr){
+          if(!sarr.equals(" ")){
+              if(startIdx%2 == 0){
+                  answer += sarr.toUpperCase();
+              }
+              else{
+                  answer += sarr.toLowerCase();
+              }
+              startIdx++;
+          }
+          else{
+              startIdx = 0;
+              answer += " ";
+          }
+      }
+      
+      return answer;
+  }
+}

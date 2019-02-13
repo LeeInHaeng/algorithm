@@ -1,0 +1,13 @@
+class Solution {
+  public String solution(String phone_number) {
+      String answer = "";
+      String[] ph = phone_number.split("");
+      for(int i=0; i<ph.length-4; i++){
+          answer += "*";
+      }
+      for(int i=ph.length-4; i<ph.length; i++){
+          answer += ph[i];
+      }
+      return answer;
+  }
+}

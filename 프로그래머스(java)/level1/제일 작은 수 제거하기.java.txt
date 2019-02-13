@@ -1,0 +1,31 @@
+import java.util.*;
+
+class Solution {
+  public int[] solution(int[] arr) {
+      if(arr.length==1){
+          int[] answer = {-1};
+          return answer;
+      }
+      
+      int[] originArr = new int[arr.length];
+      for(int i=0; i<arr.length; i++){
+          originArr[i] = arr[i];
+      }
+      Arrays.sort(arr);
+      int minVal = arr[0];
+      ArrayList<Integer> tmpAnswer = new ArrayList<>();
+      
+      for(int oa : originArr){
+          if(oa != minVal){
+              tmpAnswer.add(oa);
+          }
+      }
+      
+      int[] answer = new int[tmpAnswer.size()];
+      for(int i=0; i<tmpAnswer.size(); i++){
+          answer[i] = tmpAnswer.get(i);
+      }
+
+      return answer;
+  }
+}

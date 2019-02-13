@@ -1,0 +1,57 @@
+import java.util.*;
+
+class Solution {
+    public int[] solution(int[] answers) {
+        int[][] su = {{1,2,3,4,5},
+                      {2,1,2,3,2,4,2,5},
+                      {3,3,1,1,2,2,4,4,5,5}};
+        int[][] answerPeople = {{1,0},
+                                {2,0},
+                                {3,0}};
+        int answerCnt;
+        
+        for(int i=0; i<3; i++){
+            answerCnt = 0;
+            for(int j=0; j<answers.length; j++){
+                if(answers[j] == su[i][j%su[i].length]){
+                    answerCnt++;
+                }
+            }
+            answerPeople[i][1] = answerCnt;
+        }
+        
+        for(int i=0; i<2; i++){
+            if(answerPeople[i][1] < answerPeople[i+1][1]){
+                int tmpKey = answerPeople[i][0];
+                int tmpVal = answerPeople[i][1];
+                
+                answerPeople[i][0] = answerPeople[i+1][0];
+                answerPeople[i][1] = answerPeople[i+1][1];
+                
+                answerPeople[i+1][0] = tmpKey;
+                answerPeople[i+1][1] = tmpVal;
+            }
+        }
+
+        int maxCnt = answerPeople[0][1];
+        int[] answer = new int[1];
+        answer[0] = answerPeople[0][0];
+        
+        for(int i=1; i<3; i++){
+            if(maxCnt != answerPeople[i][1])
+                return answer;
+            else{
+                int[] tmpAnswer = new int[answer.length+1];
+                for(int j=0; j<answer.length; j++){
+                    tmpAnswer[j] = answer[j];
+                }
+                tmpAnswer[tmpAnswer.length-1] = answerPeople[i][0];
+                answer = new int[tmpAnswer.length];
+                answer = tmpAnswer;
+            }
+        }
+        
+        Arrays.sort(answer);
+        return answer;
+    }
+}

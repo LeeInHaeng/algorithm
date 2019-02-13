@@ -1,0 +1,30 @@
+import java.util.*;
+class Solution {
+  public String solution(String s, int n) {
+      String answer = "";
+      char[] chr = s.toCharArray();
+      ArrayList<Character> answerChr = new ArrayList<>();
+      for(char c : chr){
+          if(c != ' '){
+              if(c>=65 && c<=90){
+                  c = (char) (c+n);
+                  if(c > 90){
+                      c = (char)(c-26);
+                  }
+              }
+              else{
+                  c = (char) (c+n);
+                  if(c > 122){
+                      c = (char) (c-26);
+                  }
+              }
+          }
+          answerChr.add(c);
+      }
+      
+      for(Character a : answerChr) {
+    	  answer += a.toString();
+      }
+      return answer;
+  }
+}

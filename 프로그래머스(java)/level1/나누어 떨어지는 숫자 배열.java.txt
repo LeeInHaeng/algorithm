@@ -1,0 +1,25 @@
+import java.util.*;
+
+class Solution {
+  public int[] solution(int[] arr, int divisor) {
+      ArrayList<Integer> tmpAnswer = new ArrayList<>();
+      for(int a : arr){
+          if(a % divisor == 0){
+              tmpAnswer.add(a);
+          }
+      }
+      
+      if(tmpAnswer.size()==0){
+          int[] answer = {-1};
+          return answer;
+      }
+      
+      Collections.sort(tmpAnswer);
+      
+      int[] answer = new int[tmpAnswer.size()];
+      for(int i=0; i<answer.length; i++){
+          answer[i] = tmpAnswer.get(i);
+      }
+      return answer;
+  }
+}

@@ -1,0 +1,13 @@
+import java.util.*;
+
+class Solution {
+  public long solution(long n) {
+      String[] nStr = String.valueOf(n).split("");
+      Arrays.sort(nStr, Collections.reverseOrder());
+      String tmp = "";
+      for(String ns : nStr){
+          tmp += ns;
+      }
+      return Long.valueOf(tmp);
+  }
+}

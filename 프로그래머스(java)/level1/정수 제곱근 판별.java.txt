@@ -1,0 +1,10 @@
+class Solution {
+  public long solution(long n) {
+      if(Math.sqrt(n)%1!=0)
+          return -1;
+      else{
+          int tmp = (int) (Math.sqrt(n)+1);
+          return (long) Math.pow(tmp,2);
+      }
+  }
+}
