@@ -1,0 +1,20 @@
+using System;
+
+namespace level1
+{
+    public class Solution {
+        public int solution(int[] d, int budget) {
+            Array.Sort(d);
+            int cnt=0;
+            foreach(var da in d){
+                if(budget-da >= 0){
+                    budget -= da;
+                    cnt++;
+                }
+                else
+                    break;
+            }
+            return cnt;
+        }
+    }
+}

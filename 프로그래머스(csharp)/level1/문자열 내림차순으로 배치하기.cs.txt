@@ -1,0 +1,15 @@
+using System;
+using System.Linq;
+
+namespace level1
+{
+    public class Solution {
+        public string solution(string s) {
+            string answer = "";
+            char[] cs = s.ToCharArray().OrderBy(c => c).Reverse().ToArray();
+            foreach(var c in cs)
+                answer += c.ToString();
+            return answer;
+        }
+    }
+}

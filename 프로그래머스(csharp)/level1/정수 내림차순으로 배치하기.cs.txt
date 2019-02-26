@@ -1,0 +1,17 @@
+using System;
+
+namespace level1
+{
+    public class Solution {
+        public long solution(long n) {
+            string sanswer = "";
+            char[] tmpArr = n.ToString().ToCharArray();
+            Array.Sort(tmpArr);
+            Array.Reverse(tmpArr);
+            foreach(var ta in tmpArr){
+                sanswer += ta.ToString();
+            }
+            return long.Parse(sanswer);
+        }
+    }
+}

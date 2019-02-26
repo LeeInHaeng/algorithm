@@ -1,0 +1,17 @@
+using System;
+
+namespace level1
+{
+    public class Solution {
+        public long solution(long n) {
+            double nsqrt = Math.Sqrt(n);
+            if(nsqrt % 1 == 0){
+                nsqrt++;
+                return long.Parse(Math.Pow(nsqrt,2).ToString());
+            }
+            else{
+                return -1;
+            }
+        }
+    }
+}

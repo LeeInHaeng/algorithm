@@ -1,0 +1,15 @@
+using System;
+
+namespace level1
+{
+    public class Solution {
+        public int[] solution(long n) {
+            char[] nc = n.ToString().ToCharArray();
+            int[] answer = new int[nc.Length];
+            for(int i=0; i<nc.Length; i++){
+                answer[i] = int.Parse(nc[nc.Length-1-i].ToString());
+            }
+            return answer;
+        }
+    }
+}

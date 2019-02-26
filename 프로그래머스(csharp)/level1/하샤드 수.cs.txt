@@ -1,0 +1,15 @@
+using System;
+
+namespace level1
+{
+    public class Solution {
+        public bool solution(int x) {
+            char[] xcarr = x.ToString().ToCharArray();
+            int sum=0;
+            foreach(var xc in xcarr){
+                sum += int.Parse(xc.ToString());
+            }
+            return x % sum == 0;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+using System;
+using System.Linq;
+
+namespace level1
+{
+    public class Solution {
+        public int[] solution(int[] arr) {
+            
+            if(arr.Length==1){
+                int[] answer = new int[1]{-1};
+                return answer;
+            }
+            else{
+                int minVal = arr.Min();
+                return arr.Where(val => val != minVal).ToArray();
+            }
+        }
+    }
+}

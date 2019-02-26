@@ -1,0 +1,33 @@
+using System;
+
+namespace level1
+{
+    public class Solution {
+        public string solution(string s) {
+            string answer = "";
+            int idx = 0;
+            foreach(char cs in s)
+            {
+                idx++;
+                if(cs == ' ')
+                {
+                    idx=0;
+                    answer += cs;
+                }
+                else
+                {
+                    if(idx % 2 == 1)
+                    {
+                        answer += char.ToUpper(cs);
+                    }
+                    else
+                    {
+                        answer += char.ToLower(cs);
+                    }
+                }
+
+            }
+            return answer;
+        }
+    }
+}

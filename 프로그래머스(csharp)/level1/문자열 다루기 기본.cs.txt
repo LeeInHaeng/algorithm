@@ -1,0 +1,17 @@
+using System;
+
+namespace level1
+{
+    public class Solution {
+        public bool solution(string s) {
+            if(s.Length==4 || s.Length==6){
+                foreach(var c in s.ToCharArray()){
+                    if(!char.IsDigit(c))
+                        return false;
+                }
+                return true;
+            }
+            return false;
+        }
+    }
+}

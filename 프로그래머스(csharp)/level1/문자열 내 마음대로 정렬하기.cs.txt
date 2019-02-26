@@ -1,0 +1,19 @@
+using System;
+
+namespace level1
+{
+    public class Solution {
+        public string[] solution(string[] strings, int n) {
+            string[] answer = new string[strings.Length];
+            string[] dic = new string[strings.Length];
+            for(int i=0; i<dic.Length; i++){
+                dic[i] = strings[i][n] + ":" + strings[i];
+            }
+            Array.Sort(dic);
+            for(int i=0; i<answer.Length; i++){
+                answer[i] = dic[i].Split(":")[1];
+            }
+            return answer;
+        }
+    }
+}

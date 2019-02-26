@@ -1,0 +1,15 @@
+using System;
+using System.Linq;
+
+namespace level1
+{
+    public class Solution {
+        public int[] solution(int[] arr, int divisor) {
+            int[] answer = arr.Where(a => a%divisor==0).ToArray();
+            if(answer.Length==0)
+                return new int[1]{-1};
+            Array.Sort(answer);
+            return answer;
+        }
+    }
+}
