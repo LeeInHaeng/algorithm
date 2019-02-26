@@ -1,0 +1,23 @@
+using System;
+using System.Collections;
+using System.Linq;
+
+namespace level1
+{
+    public class Solution {
+        private ArrayList list = new ArrayList();
+        public int solution(int[] numbers, int target) {
+            dfs(numbers, 0, 0);
+            return list.ToArray().Where(l => int.Parse(l.ToString())==target).Count();
+        }
+
+        public void dfs(int[] numbers, int tmpSum, int idx){
+            if(idx==numbers.Length){
+                list.Add(tmpSum);
+                return;
+            }
+            dfs(numbers, tmpSum + numbers[idx], idx+1);
+            dfs(numbers, tmpSum - numbers[idx], idx+1);
+        }
+    }
+}
